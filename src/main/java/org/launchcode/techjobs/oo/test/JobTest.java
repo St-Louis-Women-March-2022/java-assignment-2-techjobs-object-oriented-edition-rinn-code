@@ -5,6 +5,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.launchcode.techjobs.oo.*;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 
 /**
@@ -42,6 +44,40 @@ public class JobTest {
         Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         Job job2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         assertFalse(job1.equals(job2));
+    }
+
+    @Test
+    public void testToStringStartsAndEndsWithNewLine(){
+        String jobString = "/n";
+        assertEquals(jobString.charAt(0), '/');
+        assertEquals(jobString.charAt(1), 'n');
+        assertEquals(jobString.charAt(jobString.length()-1), 'n');
+        assertEquals(jobString.charAt(jobString.length()-2), '/');
+    }
+
+    @Test
+    public void testToStringContainsCorrectLabelsAndData(){
+        Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertEquals(job1.getName(), "Product tester");
+        assertEquals(job1.getEmployer().getValue(), "ACME");
+        assertEquals(job1.getLocation().getValue(), "Desert");
+        assertEquals(job1.getPositionType().getValue(), "Quality control");
+        assertEquals(job1.getCoreCompetency().getValue(), "Persistence");
+    }
+
+    @Test
+    public void testToStringHandlesEmptyField(){
+        Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+     //   String jobString;
+        String noData = "Data not available";
+//        if(job1.getName() == true){
+//            return noData;
+//       }
+//                "/nEmployer: "+ job1.getEmployer()+
+//                "/nLocation: "+ job1.getLocation()+
+//                "/nPosition Type: " + job1.getPositionType()+
+//                "/nCore Competency: " + job1.getCoreCompetency()
+
     }
 
 }

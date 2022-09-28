@@ -1,5 +1,6 @@
 package org.launchcode.techjobs.oo;
 
+import javax.sound.midi.Soundbank;
 import java.util.Objects;
 
 public class Job {
@@ -50,6 +51,18 @@ public class Job {
         return id;
     }
 
+    public String toString() {
+        Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String jobString = "/nID: "+ job1.getId()+
+                    "/nName: "+ job1.getName()+
+                    "/nEmployer: "+ job1.getEmployer()+
+                    "/nLocation: "+ job1.getLocation()+
+                    "/nPosition Type: " + job1.getPositionType()+
+                    "/nCore Competency: " + job1.getCoreCompetency()+
+                    "/n";
+        return jobString;
+
+    }
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
