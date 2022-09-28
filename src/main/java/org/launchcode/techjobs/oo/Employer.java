@@ -2,35 +2,30 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
-public class Employer {
+public class Employer extends JobField{
+    public Employer(int id, String value) {
+        super(id, value);
+    }
 
-    private int id;
-    //declares the variable nextId
-    // Since it is static, its changing value is NOT stored within any Employer object.
-    private static int nextId = 1;
-    private String value;
 
 // This first constructor accepts no arguments and assigns the value of nextId to the id field.
 // It then increments nextId.
 // Thus, every new Employer object will get a different ID number.
-    public Employer() {
-        id = nextId;
-        nextId++;
-    }
-//The second constructor assigns aValue to the value field.
-// However, it ALSO initializes id for the object by calling the first constructor with the this(); statement.
-// Including this(); in any Employer constructor makes initializing id a default behavior.
-    public Employer(String value) {
-        this();
-        this.value = value;
-    }
+//    public Employer() {
+//        id = nextId;
+//        nextId++;
+//    }
+////The second constructor assigns aValue to the value field.
+//// However, it ALSO initializes id for the object by calling the first constructor with the this(); statement.
+//// Including this(); in any Employer constructor makes initializing id a default behavior.
+//    public Employer(String value) {
+//        this();
+//        this.value = value;
+ //   }
 
     // Custom toString, equals, and hashCode methods:
 
-    @Override
-    public String toString() {
-        return value;
-    }
+
 
     @Override
     public boolean equals(Object o) {  // Two objects are equal if they have the same id.
@@ -46,17 +41,5 @@ public class Employer {
     }
 
     // Getters and Setters:
-
-    public int getId() {
-        return id;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
 
 }
