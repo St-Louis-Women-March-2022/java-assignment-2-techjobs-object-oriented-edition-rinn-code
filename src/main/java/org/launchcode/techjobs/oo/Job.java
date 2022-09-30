@@ -3,16 +3,16 @@ package org.launchcode.techjobs.oo;
 import javax.sound.midi.Soundbank;
 import java.util.Objects;
 
-public class Job extends JobField{
+public class Job{
 
     private int id;
     private static int nextId = 1;
 
-//    private String name;
-//    private Employer employer;
-//    private Location location;
-//    private PositionType positionType;
-//    private CoreCompetency coreCompetency;
+    private String name;
+    private Employer employer;
+    private Location location;
+    private PositionType positionType;
+    private CoreCompetency coreCompetency;
 
 
 
@@ -25,14 +25,14 @@ public class Job extends JobField{
         nextId++;
     }
 
-//    public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
-//        this();
-//        this.name = name;
-//        this.employer = employer;
-//        this.location = location;
-//        this.positionType = positionType;
-//        this.coreCompetency = coreCompetency;
-//    }
+    public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
+        this();
+        this.name = name;
+        this.employer = employer;
+        this.location = location;
+        this.positionType = positionType;
+        this.coreCompetency = coreCompetency;
+    }
 // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
 //  match.
 
