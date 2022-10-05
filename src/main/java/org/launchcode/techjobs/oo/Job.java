@@ -40,9 +40,7 @@ public class Job{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Job job = (Job) o;
-
         return id == job.id;
     }
 
@@ -52,15 +50,34 @@ public class Job{
     }
 
     public String toString() {
-        Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        String jobString = "/nID: "+ job1.getId()+
-                    "/nName: "+ job1.getName()+
-                    "/nEmployer: "+ job1.getEmployer()+
-                    "/nLocation: "+ job1.getLocation()+
-                    "/nPosition Type: " + job1.getPositionType()+
-                    "/nCore Competency: " + job1.getCoreCompetency()+
-                    "/n";
-        return jobString;
+        Job job = new Job("Web Developer", new Employer("LaunchCode"), new Location("StL"), new PositionType("Back-end developer"), new CoreCompetency("Java"));
+        String jobString = "\nID: "+ job.getId()+/**//**/
+                    "\nName: "+ job.getName()+
+                    "\nEmployer: "+ job.getEmployer().getValue()+
+                    "\nLocation: "+ job.getLocation().getValue()+
+                    "\nPosition Type: " + job.getPositionType().getValue()+
+                    "\nCore Competency: " + job.getCoreCompetency().getValue()+
+                    "\n";
+        String noData = "Data not available";
+        //This If/Else loop needs work on structure; as of now, the program is giving noDate instead of filling blanks with verbiage
+
+        if(job.getName() == ""){
+            return  noData;
+        }
+        if(job.getEmployer().getValue() == ""){
+            return noData;
+        }
+        if(job.getLocation().getValue() == ""){
+            return noData;
+        }
+        if(job.getPositionType().getValue() == ""){
+            return noData;
+        }
+        if(job.getCoreCompetency().getValue() == ""){
+            return noData;
+        } else{
+            return jobString;
+        }
 
     }
 
