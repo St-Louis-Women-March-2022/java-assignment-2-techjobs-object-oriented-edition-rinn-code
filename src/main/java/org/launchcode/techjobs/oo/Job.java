@@ -52,7 +52,6 @@ public class Job{
     }
 
     public String toString() {
-     //   Job job = new Job("Web Developer", new Employer("LaunchCode"), new Location("StL"), new PositionType("Back-end developer"), new CoreCompetency("Java"));
         String noData = "Data not available";
 
         if(name.equals("")) {
