@@ -69,16 +69,16 @@ public class JobTest {
 
     @Test
     public void testToStringHandlesEmptyField(){
-        Job job = new Job("Web Developer", new Employer("LaunchCode"), new Location("StL"), new PositionType("Back-end developer"), new CoreCompetency("Java"));
-        String noData = "Data not available";/**//**/
+        Job job = new Job("Web Developer", new Employer(""), new Location("StL"), new PositionType(""), new CoreCompetency("Java"));
         String jobString ="\nID: "+ job.getId()+
-                "\nName: "+ job.getName()+
-                "\nEmployer: "+ job.getEmployer().getValue()+
-                "\nLocation: "+ job.getLocation().getValue()+
-                "\nPosition Type: " + job.getPositionType().getValue()+
-                "\nCore Competency: " + job.getCoreCompetency().getValue()+
+                "\nName: Web Developer"+
+                "\nEmployer: Data not available"+
+                "\nLocation: StL"+
+                "\nPosition Type: Data not available"+
+                "\nCore Competency: Java"+
                 "\n";
         assertEquals(job.toString(), jobString);
+
     }
 
 }

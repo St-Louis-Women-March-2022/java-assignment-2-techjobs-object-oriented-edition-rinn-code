@@ -1,6 +1,8 @@
 package org.launchcode.techjobs.oo;
 
 import javax.sound.midi.Soundbank;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Objects;
 
 public class Job{
@@ -50,36 +52,35 @@ public class Job{
     }
 
     public String toString() {
-        Job job = new Job("Web Developer", new Employer("LaunchCode"), new Location("StL"), new PositionType("Back-end developer"), new CoreCompetency("Java"));
-        String jobString = "\nID: "+ job.getId()+/**//**/
-                    "\nName: "+ job.getName()+
-                    "\nEmployer: "+ job.getEmployer().getValue()+
-                    "\nLocation: "+ job.getLocation().getValue()+
-                    "\nPosition Type: " + job.getPositionType().getValue()+
-                    "\nCore Competency: " + job.getCoreCompetency().getValue()+
-                    "\n";
+     //   Job job = new Job("Web Developer", new Employer("LaunchCode"), new Location("StL"), new PositionType("Back-end developer"), new CoreCompetency("Java"));
         String noData = "Data not available";
-        //This If/Else loop needs work on structure; as of now, the program is giving noDate instead of filling blanks with verbiage
 
-        if(job.getName() == ""){
-            return  noData;
+        if(name.equals("")) {
+            name = noData;
         }
-        if(job.getEmployer().getValue() == ""){
-            return noData;
+        if (employer.getValue().equals("")) {
+            employer.setValue(noData);
         }
-        if(job.getLocation().getValue() == ""){
-            return noData;
+        if (location.getValue().equals("")) {
+            location.setValue(noData);
         }
-        if(job.getPositionType().getValue() == ""){
-            return noData;
+        if (positionType.getValue().equals("")) {
+            positionType.setValue(noData);
         }
-        if(job.getCoreCompetency().getValue() == ""){
-            return noData;
-        } else{
-            return jobString;
+        if (coreCompetency.getValue().equals("")) {
+            coreCompetency.setValue(noData);
         }
 
+        String jobString = "\nID: "+ id+
+                "\nName: "+ name+
+                "\nEmployer: "+ employer.getValue()+
+                "\nLocation: "+ location.getValue()+
+                "\nPosition Type: " + positionType.getValue()+
+                "\nCore Competency: " + coreCompetency.getValue()+
+                "\n";
+        return jobString;
     }
+
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
